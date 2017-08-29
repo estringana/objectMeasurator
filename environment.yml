@@ -1,0 +1,20 @@
+name: Measurator
+channels:
+- defaults
+dependencies:
+- openssl=1.0.2l=0
+- pip=9.0.1=py27_1
+- python=2.7.13=0
+- readline=6.2=2
+- setuptools=27.2.0=py27_0
+- sqlite=3.13.0=0
+- tk=8.5.18=0
+- wheel=0.29.0=py27_0
+- zlib=1.2.11=0
+- pip:
+  - imutils==0.4.3
+  - numpy==1.13.1
+  - opencv==1.0.1
+  - opencv-python==3.3.0.9
+  - scipy==0.19.1
+
