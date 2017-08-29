@@ -19,7 +19,6 @@ show_images = True
 
 def extractBackground(imagePath):
     image = cv2.imread(imagePath)
-    # hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
     lower = np.array([150, 150, 150], dtype=np.uint8)
     upper = np.array([255, 255, 255], dtype=np.uint8)
 
@@ -49,6 +48,7 @@ def measureImage(imagePath):
     # load the image, convert it to grayscale, and blur it slightly
     image = cv2.imread(imagePath)
     showImage(image)
+    # image = extractBackground(imagePath)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     showImage(gray)
     gray = cv2.GaussianBlur(gray, (7, 7), 0)
@@ -56,7 +56,7 @@ def measureImage(imagePath):
 
     # perform edge detection, then perform a dilation + erosion to
     # close gaps in between object edges
-    edged = cv2.Canny(gray, 20, 100)
+    edged = cv2.Canny(gray, 20, 50)
     showImage(edged)
     edged = cv2.dilate(edged, None, iterations=1)
     showImage(edged)
